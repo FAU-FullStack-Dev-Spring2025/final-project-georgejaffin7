@@ -71,6 +71,7 @@ Main app walkthrough
 
 Database shown
 ![](https://github.com/FAU-FullStack-Dev-Spring2025/final-project-georgejaffin7/blob/fe0346fe0b47cabba7ce283beafd494ca4e92333/Finalv2.gif)
+
 ## Notes
 
 Describe any challenges encountered while building the app.
