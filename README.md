@@ -1,34 +1,34 @@
-# Web Development Final Project - *Name of App Here*
+# Web Development Final Project - *ChorusChat*
 
-Submitted by: **Your Name Here**
+Submitted by: **George Jaffin**
 
-This web app: **insert description**
+This web app: **acts as an online community for music fans, users can create posts with text or images, and users can comment and upvote on posts as well.**
 
-Time spent: **X** hours spent in total
+Time spent: **4** hours spent in total
 
 ## Required Features
 
 The following **required** functionality is completed:
 
 
-- [ ] **Web app includes a create form that allows the user to create posts**
+- [x] **Web app includes a create form that allows the user to create posts**
   - Form requires users to add a post title
   - Forms should have the *option* for users to add: 
     - additional textual content
     - an image added as an external image URL
-- [ ] **Web app includes a home feed displaying previously created posts**
+- [x] **Web app includes a home feed displaying previously created posts**
   - Web app must include home feed displaying previously created posts
   - By default, each post on the posts feed should show only the post's:
     - creation time
     - title 
     - upvotes count
   - Clicking on a post should direct the user to a new page for the selected post
-- [ ] **Users can view posts in different ways**
+- [x] **Users can view posts in different ways**
   - Users can sort posts by either:
     -  creation time
     -  upvotes count
   - Users can search for posts by title
-- [ ] **Users can interact with each post in different ways**
+- [x] **Users can interact with each post in different ways**
   - The app includes a separate post page for each created post when clicked, where any additional information is shown, including:
     - content
     - image
@@ -38,7 +38,7 @@ The following **required** functionality is completed:
     - Each click increases the post's upvotes count by one
     - Users can upvote any post any number of times
 
-- [ ] **A post that a user previously created can be edited or deleted from its post pages**
+- [x] **A post that a user previously created can be edited or deleted from its post pages**
   - After a user creates a new post, they can go back and edit the post
   - A previously created post can be deleted from its post page
 
@@ -66,17 +66,10 @@ The following **additional** features are implemented:
 * [ ] List anything else that you added to improve the site's functionality!
 
 ## Video Walkthrough
+Main app walkthrough
+![](https://github.com/FAU-FullStack-Dev-Spring2025/final-project-georgejaffin7/blob/c446be87ad9b135ca1458351ed07aefcd8c4bc21/Final.gif)
 
-Here's a walkthrough of implemented user stories:
-
-<img src='http://i.imgur.com/link/to/your/gif/file.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
-
-<!-- Replace this with whatever GIF tool you used! -->
-GIF created with ...  
-<!-- Recommended tools:
-[Kap](https://getkap.co/) for macOS
-[ScreenToGif](https://www.screentogif.com/) for Windows
-[peek](https://github.com/phw/peek) for Linux. -->
+Database shown
 
 ## Notes
 
