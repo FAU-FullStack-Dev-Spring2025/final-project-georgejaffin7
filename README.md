@@ -2,6 +2,10 @@
 
 Submitted by: **George Jaffin**
 
+**DEPLOYMENT LINK**
+https://68095229adb7b94a7066e779--fantastic-gnome-9423d1.netlify.app/
+
+
 This web app: **acts as an online community for music fans, users can create posts with text or images, and users can comment and upvote on posts as well.**
 
 Time spent: **4** hours spent in total
