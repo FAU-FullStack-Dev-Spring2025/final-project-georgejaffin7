@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { supabase } from '../client';
 import './Comments.css';
 
@@ -6,11 +6,7 @@ const Comments = ({ postId }) => {
   const [comments, setComments] = useState([]);
   const [newComment, setNewComment] = useState('');
 
-  useEffect(() => {
-    fetchComments();
-  }, [postId]);
-
-  const fetchComments = async () => {
+  const fetchComments = useCallback(async () => {
     const { data, error } = await supabase
       .from('Comments')
       .select('*')
@@ -25,7 +21,11 @@ const Comments = ({ postId }) => {
     if (data) {
       setComments(data);
     }
-  };
+  }, [postId]);
+
+  useEffect(() => {
+    fetchComments();
+  }, [postId, fetchComments]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();

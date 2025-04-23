@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import Card from '../components/Card';
 import { supabase } from '../client';
 import './ReadPosts.css';
@@ -9,9 +9,26 @@ const ReadPosts = () => {
   const [searchQuery, setSearchQuery] = useState('');
   const [allPosts, setAllPosts] = useState([]); // Store all posts for filtering
 
+  const fetchPosts = useCallback(async () => {
+    let query = supabase
+      .from('MusicCommunity')
+      .select();
+
+    if (sortBy === 'recent') {
+      query = query.order('created_at', { ascending: false }); // newest first
+    } else {
+      query = query.order('upvotes', { ascending: false }).order('created_at', { ascending: false }); // highest upvotes first, then newest
+    }
+
+    const { data } = await query;
+    console.log('Data from Supabase:', data);
+    setAllPosts(data || []);
+    setPosts(data || []);
+  }, [sortBy]);
+
   useEffect(() => {
     fetchPosts();
-  }, [sortBy]); // Re-fetch when sort option changes
+  }, [fetchPosts]); // Re-fetch when sort option changes
 
   useEffect(() => {
     // Filter posts when search query changes
@@ -33,23 +50,6 @@ const ReadPosts = () => {
       setPosts(sorted);
     }
   }, [searchQuery, allPosts, sortBy]);
-
-  const fetchPosts = async () => {
-    let query = supabase
-      .from('MusicCommunity')
-      .select();
-
-    if (sortBy === 'recent') {
-      query = query.order('created_at', { ascending: false }); // newest first
-    } else {
-      query = query.order('upvotes', { ascending: false }).order('created_at', { ascending: false }); // highest upvotes first, then newest
-    }
-
-    const { data } = await query;
-    console.log('Data from Supabase:', data);
-    setAllPosts(data || []);
-    setPosts(data || []);
-  };
 
   const handleSearch = (e) => {
     setSearchQuery(e.target.value);
